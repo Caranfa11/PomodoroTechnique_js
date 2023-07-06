@@ -7,9 +7,6 @@ const defaultMinutes = 1500000;
 var timerStatus = false;
 let timerInterval;
 
-
-console.log(resetBtn);
-
 const outputFormatted = (number) => String(number).padStart(2, "0");
 
 const pauseTimer = () => {
@@ -56,3 +53,12 @@ function startTimer(time) {
 }
 
 startTimer(defaultMinutes);
+
+
+const pomodorobtn = document.getElementsByClassName("pomodoro__check");
+
+console.log(pomodorobtn);
+
+pomodorobtn[0].addEventListener("click", () => {
+  pomodorobtn.classList.remove("on")
+})
