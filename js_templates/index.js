@@ -15,3 +15,7 @@ pomodoroArray.forEach(pomodoro => {
         }
     })
 });
+
+var timer = document.createElement('script');
+timer.src = "../js/timer.js"
+document.body.append(timer);
