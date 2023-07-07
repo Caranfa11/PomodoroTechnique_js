@@ -1,5 +1,3 @@
-import timer from "../js/timer.js"
-
 var finalView = `
 <div class="left__background">
     <div class="backgroundCircle">

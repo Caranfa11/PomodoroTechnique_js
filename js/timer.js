@@ -55,7 +55,7 @@ function startTimer(time) {
 startTimer(defaultMinutes);
 
 
-const pomodorobtn = document.getElementsByClassName("pomodoro__check");
+const pomodoroCheck1 = document.getElementById("1_pomodoro__check");
 
 console.log(pomodorobtn);
 
