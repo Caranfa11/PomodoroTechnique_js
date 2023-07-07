@@ -1,3 +1,5 @@
+
+
 var finalView = `
 <div class="left__background">
     <div class="backgroundCircle">
@@ -9,24 +11,19 @@ var finalView = `
     </div>
     <div class="pomodoros">
         <div class="pomodoros__check">
-            <div class="pomodoros__check--on">
-            </div>
+            <div class="pomodoro__count on" id="1_pomodoro__check"></div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
-            </div>
+            <div class="pomodoro__count off"  id="2_pomodoro__check"></div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
-            </div>
+            <div class="pomodoro__count off" id="3_pomodoro__check"></div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
-            </div>
+            <div class="pomodoro__count off" id="4_pomodoro__check"></div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
-            </div>
+            <div class="pomodoro__count off" id="5_pomodoro__check"></div>
         </div>
     </div>
     <div class="buttonsArea">

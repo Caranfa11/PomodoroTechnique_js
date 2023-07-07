@@ -27,7 +27,7 @@
 .left-view{
     background: var(--whiteColor);
     flex-grow: 1;
-    box-shadow: rgba(233, 28, 28, 0.82) 5px 3px 20px 1PX;
+    box-shadow: rgba(218, 149, 149, 0.938) 5px 2px 1px 3px;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     order: 0;
@@ -49,7 +49,7 @@
 
 .backgroundCircle{
     background: var(--lightgreyColor);
-    box-shadow: 0px 3px 25px 2px rgba(101, 17, 17, 0.947);
+    box-shadow: 0px 5px 25px 2px rgba(117, 89, 89, 0.39);
     border-radius: 50%;
     width: 40vw;
     height: 40vh;
@@ -69,7 +69,7 @@
     height: 92%;
     border-radius: 50%;
     background: var(--pinkColor);
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.363);
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0);
     display:flex;
     justify-content: center;
     align-items: center;
@@ -98,22 +98,19 @@
     align-items: center;
 }
 
-.pomodoros__check--on{
-    background: var(--weightpinkColor);
+.pomodoro__count{
     border-radius: 100%;
-    border: 0.5px solid rgba(0, 0, 0, 0.24);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.40);
-    height: 20px;
-    width: 20px;
+    box-shadow: 0px 4px 8px rgba(182, 182, 182, 0.596);
+    height: 22px;
+    width: 22px;
 }
 
-.pomodoros__check--off{
+.on{
+    background: var(--weightpinkColor);
+}
+
+.off{
     background: var(--lightgreyColor);
-    border-radius: 100%;
-    border: 0.5px solid rgba(0, 0, 0, 0.24);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.40);
-    height: 20px;
-    width: 20px;
 }
 
 /* --- Buttons Area --- */
@@ -140,7 +137,7 @@
     text-align: center;
     margin: 0px 30px;
     border: none;
-    box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 0.751);
+    box-shadow: 0px 5px 12px 0px rgba(0, 0, 0, 0.233);
 }
 
 .background__button:hover{

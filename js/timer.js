@@ -53,12 +53,3 @@ function startTimer(time) {
 }
 
 startTimer(defaultMinutes);
-
-
-const pomodoroCheck1 = document.getElementById("1_pomodoro__check");
-
-console.log(pomodorobtn);
-
-pomodorobtn[0].addEventListener("click", () => {
-  pomodorobtn.classList.remove("on")
-})
