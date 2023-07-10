@@ -3,39 +3,59 @@ const playBtn = document.getElementById("play");
 const pauseBtn = document.getElementById("pause");
 const resetBtn = document.getElementById("reset");
 const timerDisplay = document.getElementById("timer");
-const defaultMinutes = 1500000;
+const minutesTimer= [4000, 2000]
 var timerStatus = false;
+var switchTime = true;
 let timerInterval;
+var pomodoroArray = [...document.querySelectorAll(".pomodoro__count")];
+
+pomodoroArray.forEach(pomodoro => {
+    pomodoro.addEventListener("click", () => {
+            pomodoro.classList.toggle("on")
+            pomodoro.classList.toggle("off")
+    })
+});
 
 const outputFormatted = (number) => String(number).padStart(2, "0");
 
 const pauseTimer = () => {
   timerStatus = true;
-  playBtn.classList.add("hide");
-  pauseBtn.classList.remove("hide");
+  playBtn.classList.toggle("hide");
+  pauseBtn.classList.toggle("hide");
 };
 
 const playTimer = () => {
   timerStatus = false;
-  playBtn.classList.remove("hide");
-  pauseBtn.classList.add("hide");
+  playBtn.classList.toggle("hide");
+  pauseBtn.classList.toggle("hide");
 };
 
 const resetTimer = () => {
+  let timeOnDisplay;
   timerStatus = false;
-  playBtn.classList.remove("hide");
-  pauseBtn.classList.add("hide");
+  playBtn.classList.toggle("hide");
+  pauseBtn.classList.toggle("hide");
   clearInterval(timerInterval);
-  timerDisplay.innerHTML = outputFormatted(Math.floor(defaultMinutes / (1000 * 60))) + ":" + outputFormatted(Math.floor((defaultMinutes % (1000 * 60)) / 1000));
-  startTimer(defaultMinutes)
+  if (switchTime){
+    timeOnDisplay = minutesTimer[0];
+  }else{
+    timeOnDisplay = minutesTimer[1];
+  }
+  console.log(timeOnDisplay, "ok");
+  timerDisplay.innerHTML = outputFormatted(Math.floor(timeOnDisplay/ (1000 * 60))) + ":" + outputFormatted(Math.floor((timeOnDisplay% (1000 * 60)) / 1000));
+  startTimer(timeOnDisplay)
 };
 
 playBtn.addEventListener("click", pauseTimer);
 pauseBtn.addEventListener("click", playTimer);
 resetBtn.addEventListener("click", resetTimer);
 
-
 // ************ | Main Functions | ************
+
+const porcent = (current_time, full_time) => {
+  let current_porcent = (current_time*100)/full_time
+  return current_porcent
+};
 
 function startTimer(time) {
   timerInterval = setInterval(() => {
@@ -43,13 +63,24 @@ function startTimer(time) {
       let minute = Math.floor(time / (1000 * 60));
       let second = Math.floor((time % (1000 * 60)) / 1000);
       timerDisplay.innerHTML = outputFormatted(minute) + ":" + outputFormatted(second);
-      time -= 1000;
-
-      if (time === 0){
-        resetTimer();
+      console.log(time)
+      if (time === -1000){
+        if(!switchTime){
+          console.log("Work")
+          switchTime = !switchTime // Change mode value
+          resetTimer(); //Work mode
+        }
+        else{
+          switchTime = !switchTime
+          console.log("Relax")
+          console.log(switchTime)
+          resetTimer() // Change mode value / Relax mode
+        }
       }
+      time -= 1000;
     }
+    console.log(timerStatus)
   }, 1000);
 }
 
-startTimer(defaultMinutes);
+startTimer(minutesTimer[0]);
