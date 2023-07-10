@@ -3,16 +3,16 @@ const playBtn = document.getElementById("play");
 const pauseBtn = document.getElementById("pause");
 const resetBtn = document.getElementById("reset");
 const timerDisplay = document.getElementById("timer");
-const minutesTimer= [4000, 2000]
+const minutesTimer= [15000, 2000]
 var timerStatus = false;
 var switchTime = true;
 let timerInterval;
-var pomodoroArray = [...document.querySelectorAll(".pomodoro__count")];
+var pomodoroArray = [...document.querySelectorAll(".n__pomodoro")];
 
 pomodoroArray.forEach(pomodoro => {
     pomodoro.addEventListener("click", () => {
-            pomodoro.classList.toggle("on")
-            pomodoro.classList.toggle("off")
+      pomodoro.classList.toggle("on")
+      pomodoro.classList.toggle("off")
     })
 });
 
@@ -54,7 +54,7 @@ resetBtn.addEventListener("click", resetTimer);
 
 const porcent = (current_time, full_time) => {
   let current_porcent = (current_time*100)/full_time
-  return current_porcent
+  return String(-current_porcent+100) + "%"
 };
 
 let finishedPomodoro = 0;
@@ -72,8 +72,12 @@ function startTimer(time) {
         }
         else{
           switchTime = !switchTime
+          document.querySelector(".active").style.opacity = "0";
           resetTimer() // Change mode value / Relax mode
         }
+      }
+      if (switchTime){
+        document.querySelector(".active").style.opacity = porcent(time, minutesTimer[0]);
       }
       time -= 1000;
     }

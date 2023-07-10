@@ -6,13 +6,25 @@
 
 :root{
     --greyColor: #565656;
-    --lightgreyColor: #C6C6C6;
+    --lightgreyColor: #D2D2D2;
     --pinkColor: #fc8888;
-    --weightpinkColor: #FF8888;
+    --weightpinkColor: #fe9999;
     --whiteColor: #ffffff;
     --lightredColor: #FB8888;
     --redborderColor: #CC2222;
 }
+
+
+@keyframes active_pomodoro {
+    from{
+        scale: 0.5;
+        opacity: 0;
+    }
+    to{
+        scale: 1.1;
+    }
+}
+
 
 .hide{
     display: none;
@@ -50,15 +62,15 @@
 }
 
 .backgroundCircle{
-    background: var(--lightgreyColor);
-    box-shadow: 0px 5px 25px 2px rgba(117, 89, 89, 0.39);
+    background: var(--whiteColor);
+    box-shadow: 0px 4px 8px 5px rgba(182, 182, 182, 0.596);
     border-radius: 50%;
-    width: 40vw;
-    height: 40vh;
-    max-width: 310px;
-    max-height: 310px;
-    min-width: 300px;
-    min-height: 300px;
+    width: 20vmax;
+    height: 20vmax;
+    max-width: 500px;
+    max-height: 500px;
+    min-width: 210px;
+    min-height: 210px;
     margin: auto;
     display: flex;
     align-items: center;
@@ -71,7 +83,7 @@
     height: 92%;
     border-radius: 50%;
     background: var(--pinkColor);
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0);
+    box-shadow: 0px 0px 7px 0px var(--greyColor);
     display:flex;
     justify-content: center;
     align-items: center;
@@ -102,17 +114,32 @@
 
 .pomodoro__count{
     border-radius: 100%;
-    box-shadow: 0px 4px 8px rgba(182, 182, 182, 0.596);
+    box-shadow: 0px 4px 8px 5px rgba(182, 182, 182, 0.596);
     height: 22px;
     width: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.n__pomodoro{
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;;
 }
 
 .on{
     background: var(--weightpinkColor);
 }
 
-.off{
-    background: var(--lightgreyColor);
+/* .off{
+} */
+
+.active {
+    opacity: 0%;
+    border-radius: 100%;
+    animation: ease-out active_pomodoro 1s infinite alternate;
+    background: var(--weightpinkColor);
 }
 
 /* --- Buttons Area --- */

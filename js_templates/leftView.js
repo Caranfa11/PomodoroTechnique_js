@@ -11,19 +11,29 @@ var finalView = `
     </div>
     <div class="pomodoros">
         <div class="pomodoros__check">
-            <div class="pomodoro__count on" id="1_pomodoro__check"></div>
+            <div class="pomodoro__count">
+                <div class="n__pomodoro active"></div>
+            </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoro__count off"  id="2_pomodoro__check"></div>
+            <div class="pomodoro__count">
+                <div class="n__pomodoro off"></div>
+            </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoro__count off" id="3_pomodoro__check"></div>
+            <div class="pomodoro__count">
+                <div class="n__pomodoro off"></div>
+            </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoro__count off" id="4_pomodoro__check"></div>
+            <div class="pomodoro__count">
+                <div class="n__pomodoro off"></div>
+            </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoro__count off" id="5_pomodoro__check"></div>
+            <div class="pomodoro__count">
+                <div class="n__pomodoro off"></div>
+            </div>
         </div>
     </div>
     <div class="buttonsArea">
