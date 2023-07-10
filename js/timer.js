@@ -41,8 +41,8 @@ const resetTimer = () => {
   }else{
     timeOnDisplay = minutesTimer[1];
   }
-  console.log(timeOnDisplay, "ok");
   timerDisplay.innerHTML = outputFormatted(Math.floor(timeOnDisplay/ (1000 * 60))) + ":" + outputFormatted(Math.floor((timeOnDisplay% (1000 * 60)) / 1000));
+  timerStatus = true
   startTimer(timeOnDisplay)
 };
 
@@ -57,29 +57,26 @@ const porcent = (current_time, full_time) => {
   return current_porcent
 };
 
+let finishedPomodoro = 0;
 function startTimer(time) {
   timerInterval = setInterval(() => {
     if (timerStatus) {
       let minute = Math.floor(time / (1000 * 60));
       let second = Math.floor((time % (1000 * 60)) / 1000);
       timerDisplay.innerHTML = outputFormatted(minute) + ":" + outputFormatted(second);
-      console.log(time)
       if (time === -1000){
         if(!switchTime){
-          console.log("Work")
           switchTime = !switchTime // Change mode value
+          finishedPomodoro += 1
           resetTimer(); //Work mode
         }
         else{
           switchTime = !switchTime
-          console.log("Relax")
-          console.log(switchTime)
           resetTimer() // Change mode value / Relax mode
         }
       }
       time -= 1000;
     }
-    console.log(timerStatus)
   }, 1000);
 }
 
