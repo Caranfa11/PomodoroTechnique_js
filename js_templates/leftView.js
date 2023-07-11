@@ -1,4 +1,4 @@
-import timer from "../js/timer.js"
+
 
 var finalView = `
 <div class="left__background">
@@ -11,23 +11,28 @@ var finalView = `
     </div>
     <div class="pomodoros">
         <div class="pomodoros__check">
-            <div class="pomodoros__check--on">
+            <div class="pomodoro__count">
+                <div class="n__pomodoro active"></div>
             </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
+            <div class="pomodoro__count">
+                <div class="n__pomodoro"></div>
             </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
+            <div class="pomodoro__count">
+                <div class="n__pomodoro"></div>
             </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
+            <div class="pomodoro__count">
+                <div class="n__pomodoro"></div>
             </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
+            <div class="pomodoro__count">
+                <div class="n__pomodoro"></div>
             </div>
         </div>
     </div>
