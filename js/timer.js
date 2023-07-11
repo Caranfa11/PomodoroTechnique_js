@@ -11,12 +11,12 @@ var switchTime = true;
 let timerInterval;
 
 
-pomodoroArray.forEach(pomodoro => {
-    pomodoro.addEventListener("click", () => {
-      pomodoro.classList.toggle("on")
-      pomodoro.classList.toggle("off")
-    })
-});
+// pomodoroArray.forEach(pomodoro => {
+//     pomodoro.addEventListener("click", () => {
+//       pomodoro.classList.toggle("on")
+//       pomodoro.classList.toggle("off")
+//     })
+// });
 
 const outputFormatted = (number) => String(number).padStart(2, "0");
 
