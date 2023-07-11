@@ -18,7 +18,6 @@
 @keyframes active_pomodoro {
     from{
         scale: 0.5;
-        opacity: 0;
     }
     to{
         scale: 1.1;
@@ -130,13 +129,13 @@
 
 .on{
     background: var(--weightpinkColor);
+    opacity: 100% !important;
 }
 
 /* .off{
 } */
 
 .active {
-    opacity: 0%;
     border-radius: 100%;
     animation: ease-out active_pomodoro 1s infinite alternate;
     background: var(--weightpinkColor);

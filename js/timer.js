@@ -3,11 +3,13 @@ const playBtn = document.getElementById("play");
 const pauseBtn = document.getElementById("pause");
 const resetBtn = document.getElementById("reset");
 const timerDisplay = document.getElementById("timer");
-const minutesTimer= [15000, 2000]
+const pomodoroArray = [...document.querySelectorAll(".n__pomodoro")];
+const minutesTimer = [1500000, 300000]
+
 var timerStatus = false;
 var switchTime = true;
 let timerInterval;
-var pomodoroArray = [...document.querySelectorAll(".n__pomodoro")];
+
 
 pomodoroArray.forEach(pomodoro => {
     pomodoro.addEventListener("click", () => {
@@ -36,11 +38,13 @@ const resetTimer = () => {
   playBtn.classList.toggle("hide");
   pauseBtn.classList.toggle("hide");
   clearInterval(timerInterval);
+
   if (switchTime){
     timeOnDisplay = minutesTimer[0];
   }else{
     timeOnDisplay = minutesTimer[1];
   }
+
   timerDisplay.innerHTML = outputFormatted(Math.floor(timeOnDisplay/ (1000 * 60))) + ":" + outputFormatted(Math.floor((timeOnDisplay% (1000 * 60)) / 1000));
   timerStatus = true
   startTimer(timeOnDisplay)
@@ -57,29 +61,63 @@ const porcent = (current_time, full_time) => {
   return String(-current_porcent+100) + "%"
 };
 
-let finishedPomodoro = 0;
+var activePomodoroIndex = 0;
+
 function startTimer(time) {
   timerInterval = setInterval(() => {
     if (timerStatus) {
       let minute = Math.floor(time / (1000 * 60));
       let second = Math.floor((time % (1000 * 60)) / 1000);
       timerDisplay.innerHTML = outputFormatted(minute) + ":" + outputFormatted(second);
+
       if (time === -1000){
         if(!switchTime){
           switchTime = !switchTime // Change mode value
-          finishedPomodoro += 1
-          resetTimer(); //Work mode
-        }
-        else{
+          if(activePomodoroIndex < 4){
+            var activePomodoro = document.querySelector(".active")
+            if(activePomodoro){
+              activePomodoroIndex = pomodoroArray.findIndex(
+                (element) => element === activePomodoro
+              );
+              pomodoroArray[activePomodoroIndex].classList.toggle("active")
+              pomodoroArray[activePomodoroIndex].classList.toggle("on")
+              activePomodoroIndex++
+              if (activePomodoroIndex <= 4){
+                pomodoroArray[activePomodoroIndex].classList.toggle("active")
+              }else{
+                clearInterval(timerInterval)
+                timerStatus = false
+                startTimer(minutesTimer[0])
+              };
+            };
+            resetTimer();
+          }else{
+            pomodoroArray.forEach(pomodoro=>{
+              pomodoro.classList.remove("on")
+              pomodoro.classList.remove("active")
+            })
+
+            pomodoroArray[0].classList.add("active")
+            console.log("A")
+            activePomodoroIndex = 0;
+            clearInterval(timerInterval)
+            timerStatus = false
+            timerDisplay.innerHTML = outputFormatted(25)+":"+outputFormatted(0)
+            startTimer(minutesTimer[0])
+          } //Work mode
+        }else{
           switchTime = !switchTime
-          document.querySelector(".active").style.opacity = "0";
+          // document.querySelector(".active").style.opacity = "0";
           resetTimer() // Change mode value / Relax mode
         }
       }
-      if (switchTime){
+
+      if (switchTime && activePomodoroIndex < 5){
         document.querySelector(".active").style.opacity = porcent(time, minutesTimer[0]);
       }
+
       time -= 1000;
+    
     }
   }, 1000);
 }

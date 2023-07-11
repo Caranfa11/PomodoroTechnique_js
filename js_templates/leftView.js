@@ -17,22 +17,22 @@ var finalView = `
         </div>
         <div class="pomodoros__check">
             <div class="pomodoro__count">
-                <div class="n__pomodoro off"></div>
+                <div class="n__pomodoro"></div>
             </div>
         </div>
         <div class="pomodoros__check">
             <div class="pomodoro__count">
-                <div class="n__pomodoro off"></div>
+                <div class="n__pomodoro"></div>
             </div>
         </div>
         <div class="pomodoros__check">
             <div class="pomodoro__count">
-                <div class="n__pomodoro off"></div>
+                <div class="n__pomodoro"></div>
             </div>
         </div>
         <div class="pomodoros__check">
             <div class="pomodoro__count">
-                <div class="n__pomodoro off"></div>
+                <div class="n__pomodoro"></div>
             </div>
         </div>
     </div>
