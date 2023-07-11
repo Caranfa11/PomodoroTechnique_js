@@ -13,6 +13,16 @@
     --whiteColor: #ffffff;
     --lightredColor: #FB8888;
     --redborderColor: #CC2222;
+
+    /* --- DARK MODE --- */
+
+    --darkredColor: #A00D0D;
+    --darkfontColor: #E9E6E6;
+    --darkgreyColor: #5A5A5A;
+    --darkleftColor: #180011;
+    --darkpomodoroColor: #DD4444;
+    --darkshadowColor: #FF0000;
+    --darkwhiteshadowColor: #FFFFFF;
 }
 
 body{
