@@ -2,17 +2,30 @@
     margin: 0;
     padding: 0;
     font-family: san-serif;
+    transition: 1.5s ease-out;
 }
 
 :root{
     --greyColor: #565656;
     --lightgreyColor: #D2D2D2;
     --pinkColor: #fc8888;
-    --pinkBox: #FFBBBB;
+    --pinkBox: #EEB2BC;
     --weightpinkColor: #fe9999;
     --whiteColor: #ffffff;
     --lightredColor: #FB8888;
     --redborderColor: #CC2222;
+    --lightbulbColor: #e0cb0b;
+
+    /* --- DARK MODE --- */
+
+    --darkredColor: #A00D0D;
+    --darkfontColor: #E9E6E6;
+    --darkgreyColor: #3a3a3a;
+    --darkleftColor: #160011;
+    --darkpomodoroColor: #EE0000;
+    --darkshadowColor: #ff0000a0;
+    --darkwhiteshadowColor: #FFFFFF;
+    --darkbackground: #151515;
 }
 
 body{
@@ -42,27 +55,80 @@ body{
 }
 
 .left-view{
-    z-index: 100;
     height: 100vh;
+    z-index: 100;
     background: var(--whiteColor);
     flex: 1 0 25vw;
     box-shadow: rgba(218, 149, 149, 0.938) 5px 2px 1px 3px;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
+    flex-flow: column;
+}
+
+.buttons__content{
+    margin: 15px 10px 5px 10px;
+}
+
+.buttons__content button{
+    position:absolute;
+    right: 0;
+    border: none;
+    margin: 0 15px 0 0;
+    background: var(--whiteColor);
+    padding: 10px 0px;
+    border-radius: 15px;
+    outline: 1px black;
+    box-shadow: var(--lightbulbColor) 0 0 10px 0px;
+    transition: 0.15s;
+}
+
+.buttons__content button .icon{
+    font-size: 15px;
+    padding: 0 15px;
+    margin: 5px 5px;
+    color: var(--lightbulbColor);
+}
+
+.buttons__content button:hover{
+    background: var(--darkleftColor);
+    box-shadow: var(--darkbackground) 0 0 20px 1px;
+    cursor: pointer;
+}
+
+.buttons__content button:hover .icon{
+    color: var(--whiteColor);
+}
+
+.darkbuttons__content button{
+    background: var(--darkleftColor);
+    box-shadow: var(--darkleftColor) 0 0 20px 1px;
+    transition: 0.15s;
+}
+
+.darkbuttons__content button .icon{
+    color: var(--darkfontColor);
+}
+
+.darkbuttons__content button:hover{
+    background: var(--whiteColor);
+    box-shadow: var(--lightbulbColor) 0 0 20px 1px;
+}
+
+.darkbuttons__content button:hover .icon{
+    color: var(--lightbulbColor);
 }
 
 .left__background{
+    margin: auto;
     width: 100%;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    padding: 30px;
-    /* border: 2px rebeccapurple solid; */
 }
 
 .backgroundCircle{
@@ -75,7 +141,7 @@ body{
     max-height: 500px;
     min-width: 210px;
     min-height: 210px;
-    margin: auto;
+    /* margin: auto; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,7 +177,7 @@ body{
 }
 
 .pomodoros__check{
-    margin: 50px 12px;
+    margin: 30px 12px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,17 +200,17 @@ body{
 }
 
 .on{
-    background: var(--weightpinkColor);
+    background: var(--darkpomodoroColor);
     opacity: 100% !important;
 }
 
 /* .off{
 } */
 
-.active {
+.active{
     border-radius: 100%;
     animation: ease-out active_pomodoro 1s infinite alternate;
-    background: var(--weightpinkColor);
+    background: var(--darkpomodoroColor);
 }
 
 /* --- Buttons Area --- */
@@ -175,16 +241,21 @@ body{
 }
 
 .background__button:hover{
-    background: var(--greyColor);
+    background: var(--whiteColor);
+    box-shadow: 0px 5px 15px 0px var(--darkgreyColor);
     cursor: pointer;
-    color: var(--weightpinkColor);
 }
 
 .buttonsArea__box > button > .icon{
-    color: white;
+    color: var(--whiteColor);
     font-size: 30px;
     margin: auto;
 }
+
+.buttonsArea__box > button:hover > .icon{
+    color: var(--weightpinkColor);
+}
+
 
 /* --- Right Side ---*/
 
@@ -213,9 +284,8 @@ body{
     width: 90%;
     padding: 15px;
     background: var(--pinkBox);
-    border: 5px solid var(--redborderColor);
-    box-shadow: 0px 0px 0px rgba(255, 0, 0, 0.25);
-    border-radius: 5px;
+    border: 4px solid var(--redborderColor);
+    border-radius: 10px;
 }
 
 .box__head{
@@ -247,8 +317,9 @@ body{
 
 .box__info p{
     text-align: center;
-    font-size:18px;
+    font-size:19px;
     font-weight:bold;
+    letter-spacing: 0.5px;
     margin: 15px 20px 20px;
 }
 
@@ -268,9 +339,9 @@ body{
 }
 
 .step{
-    width: 245px;
+    width: 240px;
     height: 80px;
-    margin: 10px 5px;
+    margin: 12px;
     padding: 5px 0px;
     background: var(--pinkBox);
     border: 4px solid var(--redborderColor);box-shadow: 0px 0px 0px rgba(255, 0, 0, 0.25);
@@ -305,12 +376,44 @@ body{
 .step__text{
     text-align:center;
     font-weight:bold;
-    font-size: 18px;
+    font-size: 16px;
     width:80%;
     margin: auto 15px auto 0;
 }
 
-@media (max-width: 880px){
+@media (max-width: 1100px) {
+
+    .box{
+        width: 100%;
+        margin: 20px 0;
+        padding: 5px;
+    }
+
+    .box__title h2{
+        font-size: 25px;
+        flex: 1 1 auto;
+        margin: 0px;
+    }
+
+    .box__info p{
+        font-size: 15px;
+    }
+
+    .steps__title{
+        font-size: 20px;
+    }
+
+    .step{
+        width: 200px;
+        height: 75px;
+    }
+
+    .step__text{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 910px){
     .template{
         flex-flow: column;
     }
@@ -324,7 +427,7 @@ body{
     }
 
     .left__background{
-        margin: 0;
+        margin: 0 0;
         padding: 30px 0;
     }
 
@@ -342,6 +445,7 @@ body{
     }
 
     .right-view{
+        margin: 10px 0;
         width: 100%;
     }
 
@@ -367,4 +471,62 @@ body{
         font-size: 15px;
         text-align: justify;
     }
+
+    .step{
+        width: 240px;
+        height: 80px;
+        margin: 10px;
+    }
+
+    .step__text{
+        font-size: 15px;
+    }
+
+}
+
+/* Dark mode */
+
+.darkModeleftview{
+    background: var(--darkleftColor);
+    box-shadow: var(--darkredColor) 0 0 10px 2px;
+}
+
+.darkActive{
+    background: var(--darkpomodoroColor); 
+}
+
+.darkbackgroundCircle{
+    background: var(--greyColor);
+    box-shadow: 0px 0px 8px 1.5px var(--darkredColor);
+}
+
+.darkcircle__content{
+    background: var(--darkredColor);
+    color: var(--darkfontColor);
+}
+
+.darkbackground__button{
+    background-color: var(--darkredColor);
+    box-shadow: 0px 0px 5px 2px var(--greyColor);
+}
+
+.darkbackground__button:hover{
+    background-color: var(--darkgreyColor);
+    box-shadow: 0px 0px 8px 1.5px var(--darkredColor);
+}
+
+.buttonsArea__box > .darkbackground__button:hover .icon{
+    color: var(--darkpomodoroColor);
+}
+
+.darkright_view{
+    background-color: var(--darkbackground);
+}
+
+.darkbox{
+    background: var(--darkgreyColor);
+    border: 3px solid #16001100;
+    /* border: 3px solid var(--darkredColor); */
+    box-shadow: var(--darkredColor) 0px 0px 10px 4px;
+    color: var(--darkfontColor);
 }

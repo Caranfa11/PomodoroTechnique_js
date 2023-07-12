@@ -1,6 +1,13 @@
 
 
 var finalView = `
+<div class="buttons__content">
+    <div class="dark__button" id="darkMode">
+        <button>
+            <i class="icon fa-solid fa-lightbulb"></i>
+        </button>
+    </div>
+</div>
 <div class="left__background">
     <div class="backgroundCircle">
         <div class="circle__content">
