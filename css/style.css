@@ -525,7 +525,7 @@ body{
 
 .darkbox{
     background: var(--darkgreyColor);
-    border: 3px solid #16001100;
+    border: 4px solid #16001100;
     /* border: 3px solid var(--darkredColor); */
     box-shadow: var(--darkredColor) 0px 0px 10px 4px;
     color: var(--darkfontColor);
