@@ -5,6 +5,7 @@ document.querySelector(".circle__content").classList.toggle("darkcircle__content
 document.querySelector(".backgroundCircle").classList.toggle("darkbackgroundCircle")
 document.querySelector(".box").classList.toggle("darkbox");
 document.querySelector(".right-view").classList.toggle("darkright_view");
+document.querySelector(".buttonsArea__box").classList.toggle("darkbuttonsArea__box")
 document.body.style.background = "#151515";
 
 
