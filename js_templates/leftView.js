@@ -1,6 +1,13 @@
-import timer from "../js/timer.js"
+
 
 var finalView = `
+<div class="buttons__content">
+    <div class="dark__button" id="darkMode">
+        <button>
+            <i class="icon fa-solid fa-lightbulb"></i>
+        </button>
+    </div>
+</div>
 <div class="left__background">
     <div class="backgroundCircle">
         <div class="circle__content">
@@ -11,23 +18,28 @@ var finalView = `
     </div>
     <div class="pomodoros">
         <div class="pomodoros__check">
-            <div class="pomodoros__check--on">
+            <div class="pomodoro__count">
+                <div class="n__pomodoro active"></div>
             </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
+            <div class="pomodoro__count">
+                <div class="n__pomodoro"></div>
             </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
+            <div class="pomodoro__count">
+                <div class="n__pomodoro"></div>
             </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
+            <div class="pomodoro__count">
+                <div class="n__pomodoro"></div>
             </div>
         </div>
         <div class="pomodoros__check">
-            <div class="pomodoros__check--off">
+            <div class="pomodoro__count">
+                <div class="n__pomodoro"></div>
             </div>
         </div>
     </div>
