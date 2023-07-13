@@ -1,5 +1,4 @@
 const changeViewMode = () => {
-    document.querySelector("body").classList.toggle("darkright_view")
     document.querySelector(".template").classList.toggle("darkright_view")
     document.querySelector(".left-view").classList.toggle("darkModeleftview")
     document.querySelector(".active").classList.toggle("darkActive")
@@ -21,6 +20,7 @@ const changeViewMode = () => {
     document.querySelectorAll(".step").forEach(element =>{
         element.classList.toggle("darkbox")
     })
+    document.querySelector('body').classList.toggle("dark");
 }
 
-document.getElementById("darkMode").addEventListener("click",changeViewMode)
+export {changeViewMode}

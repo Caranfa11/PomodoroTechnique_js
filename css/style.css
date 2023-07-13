@@ -530,3 +530,7 @@ body{
     box-shadow: var(--darkredColor) 0px 0px 10px 4px;
     color: var(--darkfontColor);
 }
+
+body.dark{
+    background-color: var(--darkbackground);
+}
