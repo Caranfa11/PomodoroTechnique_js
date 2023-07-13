@@ -1,4 +1,5 @@
 const changeViewMode = () => {
+    document.querySelector("body").classList.toggle("darkright_view")
     document.querySelector(".template").classList.toggle("darkright_view")
     document.querySelector(".left-view").classList.toggle("darkModeleftview")
     document.querySelector(".active").classList.toggle("darkActive")
@@ -8,25 +9,18 @@ const changeViewMode = () => {
     document.querySelector(".right-view").classList.toggle("darkright_view");
     document.querySelector(".buttonsArea__box").classList.toggle("darkbuttonsArea__box")
     document.querySelector(".buttons__content").classList.toggle("darkbuttons__content")
-    document.body.style.background = "#151515";
-
-
     document.querySelectorAll(".on").forEach(element => {
         element.classList.toggle("darkActive")
     })
-
     document.querySelectorAll(".pomodoro__count").forEach(element => {
         element.classList.toggle("darkbackgroundCircle")
     })
-
     document.querySelectorAll(".background__button").forEach(element =>{
         element.classList.toggle("darkbackground__button")
     })
-
     document.querySelectorAll(".step").forEach(element =>{
         element.classList.toggle("darkbox")
     })
 }
-
 
 document.getElementById("darkMode").addEventListener("click",changeViewMode)
