@@ -352,7 +352,7 @@ body{
     align-items:center;
 }
 
-.step__number{
+.step__number, .item__title{
     color:var(--whiteColor);
     font-size:30px;
     margin:10px 0px;
@@ -373,12 +373,117 @@ body{
     background: rgb(194, 83, 83);
 }
 
-.step__text{
+.step__text, .item__description{
     text-align:center;
     font-weight:bold;
     font-size: 16px;
     width:80%;
     margin: auto 15px auto 0;
+}
+
+/* --- To Do List View --- */
+
+.box__todo{
+    width: 100%;
+    height: 40px;
+    padding: 15px 0;
+    background: var(--pinkBox);
+    border: 4px solid var(--redborderColor);
+    border-radius: 5px;
+}
+
+.box__todo__head{
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.box__todo__title{
+    width: 100%;
+    padding: 0;
+}
+
+.box__todo__title h2{
+    margin: auto 20px;
+    width: 100%;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 20px;
+    text-align: left;
+}
+
+.icon__todo{
+    margin:auto 20px;
+    display:flex;
+    font-size:25px;
+}
+
+.box__items{
+    margin: 15px 0;
+    width:100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    width: 95%;
+    height: 80px;
+    margin: 12px 0;
+    padding: 5px 5px;
+    background: var(--pinkBox);
+    border: 4px solid var(--redborderColor);box-shadow: 0px 0px 0px rgba(255, 0, 0, 0.25);
+    border-radius: 10px;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content:center;
+    align-items:center;
+}
+
+.item__title{
+    flex: 2 1 20%;
+    margin: auto 10px;
+    padding: auto;
+}
+
+.item__title label{
+    width: 100%;
+    font-size: 2.1rem;
+    text-align:left;
+    font-weight:bold;
+}
+
+.item__description{
+    flex: 3 2 60%;
+    text-align:center;
+    font-weight:bold;
+    font-size: 1.1rem;
+    width:100%;
+    margin: auto;
+    text-align: left;
+}
+
+.item__delete, .item__edit{
+    flex: 2 1 20%;
+    text-align:center;
+    font-weight:bold;
+    font-size: 15px;
+}
+
+.item__delete .item__button, .item__edit .item__button {
+    font-size: 1.1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.item__delete .item__button p, .item__edit .item__button p {
+    margin: 0 5px;
 }
 
 @media (max-width: 1100px) {

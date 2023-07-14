@@ -1,4 +1,4 @@
-var rightView = `
+var rightView = [`
 <div class="right__background">
     <div class="box">
         <div class="box__head">
@@ -80,6 +80,39 @@ var rightView = `
         </div>
     </div>
 </div>
-`
+`,
+`<div class="right__background">
+    <div class="box__todo">
+        <div class="box__todo__head">
+            <div class="box__todo__title">
+                <h2>To do</h2>
+            </div>
+            <div class="icon__todo">
+                <i class="fas fa-plus"></i>
+            </div>
+        </div>
+    </div>
+    <div class="box__items">
+        <div class="item">
+            <div class="item__title">
+                <label>title</label>
+            </div>
+            <div class="item__description">
+                <label>description</label>
+            </div>
+            <div class="item__edit">
+                <div class="item__button">
+                    <p>edit </p><i class="fas fa-pencil"></i>
+                </div>
+            </div>
+            <div class="item__delete">
+                <div class="item__button">
+                    <p>delete  </p><i class="fas fa-trash-alt"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+`]
 
 export default rightView

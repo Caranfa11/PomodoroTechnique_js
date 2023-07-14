@@ -5,7 +5,7 @@ import {changeViewMode} from "../js/darkMode.js"
 var darkmode = localStorage.getItem('darkmode');
 
 document.getElementById("left-view").innerHTML = finalView;
-document.getElementById("right-view").innerHTML = rightView
+document.getElementById("right-view").innerHTML = rightView[1];
 
 load();
 
