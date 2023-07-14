@@ -1,4 +1,4 @@
-const changeViewMode = () => {
+const changeViewMode = (dark) => {
     document.querySelector(".template").classList.toggle("darkright_view")
     document.querySelector(".left-view").classList.toggle("darkModeleftview")
     document.querySelector(".active").classList.toggle("darkActive")

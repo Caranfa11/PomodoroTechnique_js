@@ -2,33 +2,35 @@ import finalView from "./leftView.js"
 import rightView from "./rightView.js"
 import {changeViewMode} from "../js/darkMode.js"
 
+var darkmode = localStorage.getItem('darkmode');
+
 document.getElementById("left-view").innerHTML = finalView;
 document.getElementById("right-view").innerHTML = rightView
 
-document.getElementById("darkMode").addEventListener("click", changeViewMode)
+load();
+
+document.getElementById("darkMode").addEventListener("click", e => {
+    darkmode = !darkmode
+    store(`${darkmode}`)
+    changeViewMode(darkmode)
+})
 
 function load() {
-    const darkmode = localStorage.getItem('darkmode');
-    if (!darkmode || darkmode == null || darkmode == 'false' ) {
-        console.log("falsea")
-        store('false');
+    if (darkmode == null || darkmode == 'false' || darkmode == undefined) {
+        darkmode = !darkmode
+        store(`${darkmode}`);
     } else if (darkmode == 'true') {
-        console.log("is true?");
-        document.querySelector('body').classList.add('dark');
+        changeViewMode(darkmode)
     }
-    console.log("bitch")
 }
 
 function store(value) {
     localStorage.setItem('darkmode', value);
-    console.log('Dark', localStorage.getItem('darkmode'));
 }
 
 var timer = document.createElement('script');
 timer.src = "../js/timer.js"
 document.body.append(timer);
-
-load();
 // var dark = document.createElement('script');
 // dark.src = "../js/darkMode.js"
 // document.body.append(dark);
