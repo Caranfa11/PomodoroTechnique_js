@@ -92,22 +92,222 @@ var rightView = [`
             </div>
         </div>
     </div>
-    <div class="box__items">
-        <div class="item">
-            <div class="item__title">
-                <label>title</label>
-            </div>
-            <div class="item__description">
-                <label>description</label>
-            </div>
-            <div class="item__edit">
-                <div class="item__button" id="bt_edit">
-                    <p>edit</p><i class="fas fa-pencil"></i>
+    <div class="items__scroll">
+        <div class="box__items">
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
                 </div>
             </div>
-            <div class="item__delete">
-                <div class="item__button" id="bt_delete">
-                    <p>delete</p><i class="fas fa-trash-alt"></i>
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="item__title">
+                    <label>title</label>
+                </div>
+                <div class="item__description">
+                    <label>description</label>
+                </div>
+                <div class="item__edit">
+                    <div class="item__button" id="bt_edit">
+                        <p>edit</p><i class="fas fa-pencil"></i>
+                    </div>
+                </div>
+                <div class="item__delete">
+                    <div class="item__button" id="bt_delete">
+                        <p>delete</p><i class="fas fa-trash-alt"></i>
+                    </div>
                 </div>
             </div>
         </div>
