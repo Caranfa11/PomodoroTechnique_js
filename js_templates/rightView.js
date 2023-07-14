@@ -81,14 +81,14 @@ var rightView = [`
     </div>
 </div>
 `,
-`<div class="right__background">
+`<div class="right__todo__background">
     <div class="box__todo">
         <div class="box__todo__head">
             <div class="box__todo__title">
                 <h2>To do</h2>
             </div>
             <div class="icon__todo">
-                <i class="fas fa-plus"></i>
+                <p>add</p><i class="fas fa-plus"></i>
             </div>
         </div>
     </div>
@@ -101,13 +101,13 @@ var rightView = [`
                 <label>description</label>
             </div>
             <div class="item__edit">
-                <div class="item__button">
-                    <p>edit </p><i class="fas fa-pencil"></i>
+                <div class="item__button" id="bt_edit">
+                    <p>edit</p><i class="fas fa-pencil"></i>
                 </div>
             </div>
             <div class="item__delete">
-                <div class="item__button">
-                    <p>delete  </p><i class="fas fa-trash-alt"></i>
+                <div class="item__button" id="bt_delete">
+                    <p>delete</p><i class="fas fa-trash-alt"></i>
                 </div>
             </div>
         </div>
