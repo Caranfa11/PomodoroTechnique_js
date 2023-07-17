@@ -414,23 +414,58 @@ body{
 }
 
 .box__todo__title{
-    width: 100%;
+    flex: 1 1 20%;
     padding: 0;
 }
 
 .box__todo__title h2{
-    margin: auto 20px;
+    margin: auto;
     width: 100%;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 35px;
     line-height: 20px;
-    text-align: left;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.input__bar{
+    flex: 1 1 80%;
+    width: 100%;
+    margin: auto;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input__bar__box{
+    width:90%;
+    background: var(--pinkBox);
+    border: none;
+    padding: 5px 5px;
+    border-bottom: var(--darkredColor) 1px solid;
+    border-radius: 10px;
+    color:var(--darkbackground);
+    font-weight: bold;
+}
+
+.input__bar__box:hover{
+    background: linear-gradient(#00000000 60%, var(--lightredColor));
+    border-bottom: var(--darkredColor) 1px solid;
+}
+
+.input__bar__box:focus{
+    outline: none;
+    border-bottom: var(--darkredColor) 1px solid;   
+    background: var(--lightredColor);
 }
 
 .icon__todo{
-    margin:0 20px;
+    flex: 1 1 0%;
+    margin:5px;
     display:flex;
-    font-size:25px;
+    justify-content: center;
+    align-items: center;
     transition: 0s ease-out;
     border: var(--darkbackground) 1px solid;
     padding: 10px 5px;
@@ -453,7 +488,7 @@ body{
 
 .icon__todo p {
     margin: 0 5px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-align: left;
 }
@@ -489,26 +524,13 @@ body{
     justify-content:center;
     align-items:center;
 }
-
-.item__title{
-    flex: 2 1 20%;
-    margin: auto 10px;
-}
-
-.item__title label{
-    width: 100%;
-    font-size: 2.1rem;
-    text-align:left;
-    font-weight:bold;
-}
-
 .item__description{
     flex: 3 2 60%;
     text-align:center;
     font-weight:bold;
     font-size: 1.1rem;
     /* width:100%; */
-    margin: auto;
+    margin: auto 10px;
     text-align: left;
 }
 
@@ -721,16 +743,25 @@ body{
         height: 25px;
     }
 
+    .box__todo__title{
+        flex: 1 1 50px;
+        margin: 0 5px;
+    }
+
     .box__todo__title h2{
-        font-size: 20px;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .input__bar{
+        margin: 5px 10px;
     }
 
     .icon__todo{
-        padding: 5px;
-    }
-
-    .icon__todo{
-        font-size: 12px;
+        margin: 0 5px;
+        padding: 5px 2px;
     }
 
     .icon__todo p{
@@ -747,6 +778,23 @@ body{
 
     
 
+}
+
+@media (max-width: 500px){
+    .box__todo__title h2{
+        font-size: 15px;
+        margin: 5px 10px;
+    }
+
+    .input__bar{
+        width: 100%;
+        margin: 0 0 0 5px;
+    }
+
+    .icon__todo{
+        margin: 5px;
+        padding: 5px 10px;
+    }
 }
 
 /* Dark mode */
@@ -823,6 +871,23 @@ body.dark{
     color: var(--darkfontColor);
     outline: var(--darkfontColor) 1px solid;
     box-shadow: var(--darkshadowColor) 0px 0px 5px 1px;
+}
+
+.darkinput__bar__box{
+    background: var(--darkgreyColor);
+    color: var(--darkfontColor);
+}
+
+.darkinput__bar__box:hover{
+    background: linear-gradient(#00000000 75%, var(--darkpomodoroColor));
+    border-bottom: var(--darkredColor) 1px solid;
+}
+
+.darkinput__bar__box:focus{
+    outline: none;
+    border-bottom: var(--darkredColor) 1px solid;   
+    background: var(--darkbackground);
+    color: var(--darkfontColor);
 }
 
 .darkitem{

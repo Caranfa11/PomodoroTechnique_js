@@ -32,6 +32,7 @@ const changeViewMode = (dark) => {
     document.querySelectorAll(".item__edit").forEach(element => {
         element.classList.toggle("darkitem__edit");
     });
+    document.querySelector(".input__bar__box").classList.toggle("darkinput__bar__box")
 }
 
 export {changeViewMode}
