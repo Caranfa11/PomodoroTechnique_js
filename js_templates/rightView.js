@@ -87,12 +87,19 @@ var rightView = [`
             <div class="box__todo__title">
                 <h2>To do</h2>
             </div>
-            <div class="input__bar" id="input">
-                <input class="input__bar__box" placeholder="Type your task">
-            </div>
-            <div class="icon__todo">
-                <p>add</p><i class="fas fa-plus"></i>
-            </div>
+            <form class="input__bar" id="input">
+                
+                <input 
+                    type="text" 
+                    name="content"
+                    id="content"
+                    placeholder="e.g. make a video"
+                    class="input__bar__box" />
+                
+                    <button class="icon__todo" type="submit">
+                    <p>add</p><i class="fas fa-plus"></i>
+                </button>
+            </form>
         </div>
     </div>
     <div class="items__scroll">

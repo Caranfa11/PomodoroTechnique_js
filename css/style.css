@@ -471,6 +471,7 @@ body{
     padding: 10px 5px;
     border-radius: 2px;
     transition: 0.25s;
+    background-color: var(--darkfontColor);
 }
 
 .icon__todo:hover{
@@ -862,6 +863,8 @@ body.dark{
 }
 
 .darkicon__todo{
+    background: var(--darkbackground);
+    color: var(--darkfontColor);
     outline: var(--darkfontColor) 1px solid;
     box-shadow: var(--darkshadowColor) 0px 0px 5px 1px;
 }
