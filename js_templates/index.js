@@ -2,6 +2,40 @@ import finalView from "./leftView.js"
 import rightView from "./rightView.js"
 import {changeViewMode} from "../js/darkMode.js"
 
+window.addEventListener('load', () => {
+    todos = JSON.parse(localStorage.getItem('todos')) || [];
+    const newTodoForm = document.querySelector('#new__todo__form');
+
+    newTodoForm.addEventListener('submit', e => {
+        e.preventDefault();
+
+        const  todo = {
+            content: e.target.elements.content.value,
+            done: false,
+        }
+
+        todos.push(todo);
+
+        localStorage.setItem('todos', JSON.stringify(todos));
+
+        e.target.reset();
+
+        DisplayTodos();
+
+    })
+
+})
+
+function DisplayTodos(){
+    const todoList = document.querySelector("#todolist")
+
+    todoList.innerHTML = '';
+
+    todos.forEach(todo => {
+        // const todoItem = document.createElement
+    })
+}
+
 var darkmode = localStorage.getItem('darkmode');
 
 document.getElementById("left-view").innerHTML = finalView;

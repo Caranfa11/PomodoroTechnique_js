@@ -431,7 +431,7 @@ body{
 .input__bar{
     flex: 1 1 80%;
     width: 100%;
-    margin: auto;
+    height: 100%;
     padding: 10px 0;
     display: flex;
     justify-content: center;
@@ -456,8 +456,8 @@ body{
 
 .input__bar__box:focus{
     outline: none;
-    border-bottom: var(--darkredColor) 1px solid;   
-    background: var(--lightredColor);
+    background: linear-gradient(#00000000 60%, var(--lightredColor));
+    border-bottom: var(--darkredColor) 1px solid;
 }
 
 .icon__todo{
