@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: san-serif;
-    transition: 0.65s ease-out;
+    transition: 0.55s ease-out;
 }
 
 :root{
@@ -15,13 +15,14 @@
     --lightredColor: #FB8888;
     --redborderColor: #CC2222;
     --lightbulbColor: #e0cb0b;
+    --blueColor: #0026e6;
 
     /* --- DARK MODE --- */
 
     --darkredColor: #A00D0D;
     --darkfontColor: #E9E6E6;
     --darkgreyColor: #3a3a3a;
-    --darkleftColor: #160011;
+    --darkleftColor: #0A050D;
     --darkpomodoroColor: #EE0000;
     --darkshadowColor: #ff0000a0;
     --darkwhiteshadowColor: #FFFFFF;
@@ -102,25 +103,6 @@ body{
     color: var(--whiteColor);
 }
 
-.darkbuttons__content button{
-    background: var(--darkleftColor);
-    box-shadow: var(--darkleftColor) 0 0 20px 1px;
-    transition: 0.15s;
-}
-
-.darkbuttons__content button .icon{
-    color: var(--darkfontColor);
-}
-
-.darkbuttons__content button:hover{
-    background: var(--whiteColor);
-    box-shadow: var(--lightbulbColor) 0 0 20px 1px;
-}
-
-.darkbuttons__content button:hover .icon{
-    color: var(--lightbulbColor);
-}
-
 .left__background{
     margin: auto;
     width: 100%;
@@ -139,8 +121,8 @@ body{
     height: 20vmax;
     max-width: 500px;
     max-height: 500px;
-    min-width: 210px;
-    min-height: 210px;
+    min-width: 190px;
+    min-height: 190px;
     /* margin: auto; */
     display: flex;
     align-items: center;
@@ -352,7 +334,7 @@ body{
     align-items:center;
 }
 
-.step__number{
+.step__number, .item__title{
     color:var(--whiteColor);
     font-size:30px;
     margin:10px 0px;
@@ -373,13 +355,225 @@ body{
     background: rgb(194, 83, 83);
 }
 
-.step__text{
+.step__text, .item__description{
     text-align:center;
     font-weight:bold;
     font-size: 16px;
     width:80%;
     margin: auto 15px auto 0;
 }
+
+/* --- To Do List View --- */
+
+.right__todo__background{
+    width: 90%;
+    height: 80%;
+    margin: auto;
+    text-align:center;
+    display: flex;
+    flex-flow: nowrap column;
+
+}
+
+.box__todo{
+    min-width: inherit;
+    height: 40px;
+    padding: 15px 0;
+    background: var(--pinkBox);
+    border: 4px solid var(--redborderColor);
+    border-radius: 3px;
+    margin: 0px 0;
+}
+
+.box__todo__head{
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.box__todo__title{
+    flex: 1 1 20%;
+    padding: 0;
+}
+
+.box__todo__title h2{
+    margin: auto;
+    width: 100%;
+    font-weight: bold;
+    font-size: 35px;
+    line-height: 20px;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.input__bar{
+    flex: 1 1 80%;
+    width: 100%;
+    height: 100%;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input__bar__box{
+    width:90%;
+    background: var(--pinkBox);
+    border: none;
+    padding: 5px 5px;
+    border-bottom: var(--darkredColor) 1px solid;
+    border-radius: 10px;
+    color:var(--darkbackground);
+    font-weight: bold;
+}
+
+.input__bar__box:hover{
+    background: linear-gradient(#00000000 60%, var(--lightredColor));
+    border-bottom: var(--darkredColor) 1px solid;
+}
+
+.input__bar__box:focus{
+    outline: none;
+    background: linear-gradient(#00000000 60%, var(--lightredColor));
+    border-bottom: var(--darkredColor) 1px solid;
+}
+
+.icon__todo{
+    flex: 1 1 0%;
+    margin:5px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0s ease-out;
+    border: var(--darkbackground) 1px solid;
+    padding: 10px 5px;
+    border-radius: 2px;
+    transition: 0.25s;
+    background-color: var(--darkfontColor);
+}
+
+.icon__todo:hover{
+    cursor: pointer;
+    color: var(--redborderColor);
+    background-color: var(--darkfontColor);
+    box-shadow: var(--darkbackground) 0 0 5px 1px;
+    transform: scale(1.1);
+}
+
+.icon__todo .fas{
+    margin: 0 5px;
+    padding: auto;
+}
+
+.icon__todo p {
+    margin: 0 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: left;
+}
+
+.items__scroll{
+    /* overflow: hidden; */
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+
+.items__scroll::-webkit-scrollbar{
+    display: none;
+}
+
+.box__items{
+    margin: 5px 0 0;
+    width:100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item{
+    width: 95%;
+    height: 80px;
+    margin: 10px 0;
+    background: var(--pinkBox);
+    border: 4px solid var(--redborderColor);box-shadow: 0px 0px 0px rgba(255, 0, 0, 0.25);
+    border-radius: 10px;
+    display: flex;
+    flex-flow: nowrap row;
+    justify-content:center;
+    align-items:center;
+}
+.item__description{
+    flex: 3 2 60%;
+    text-align:center;
+    font-weight:bold;
+    font-size: 1.1rem;
+    margin: auto 10px;
+    text-align: left;
+}
+
+.item__description input{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: 0;
+    font-size: 1.1rem;
+    text-align:center;
+    font-weight:bold;
+}
+
+.item__delete, .item__edit{
+    transition: none;
+    flex: 2 1 10%;
+    text-align:center;
+    font-weight:bold;
+    margin: 0 7px;
+    padding: 10px 5px;
+    border: none;;
+    border-radius: 4px;
+    background-color: var(--darkfontColor);
+}
+
+.item__button{
+    font-size: 1.1rem;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-content: center;
+}
+
+.item__delete .item__button p, .item__edit .item__button  p {
+    margin: 0 5px;
+}
+
+.item__delete {
+    transition: 0.10s ease;
+    color: var(--redborderColor);
+    /* filter: drop-shadow( 1px 5px 5px var(--darkpomodoroColor)); */
+}
+
+.item__edit{
+    transition: 0.10s ease;
+    color: var(--blueColor);
+    /* filter: drop-shadow( 0px 2px 10px var(--darkwhiteshadowColor)); */
+}
+
+.item__delete:hover {
+    transform: scale(1.1);
+    box-shadow: var(--darkbackground) 0 0 5px 1px;
+    cursor: pointer;
+}
+
+.item__edit:hover{
+    transform: scale(1.1);
+    box-shadow: var(--darkbackground) 0 0 5px 1px;
+    cursor: pointer;
+}
+
+
 
 @media (max-width: 1100px) {
 
@@ -411,11 +605,53 @@ body{
     .step__text{
         font-size: 15px;
     }
+
+    .item{
+        width: 95%;
+        padding: 0;
+    }
+
+    .item__title{
+        flex: 2 1 10%;
+    }
+
+    .item__title label{
+        font-size: 17px;
+    }
+
+    .item__description{
+        font-size: 15px;
+        flex: 3 2 80%;
+    }
+
+    .item__edit, .item__delete, .darkitem__delete, .darkitem__edit{
+        flex-flow: column wrap;
+        margin: 0 5px;
+        font-size: 5px;
+    }
+    
+    .item__button{
+        flex-flow: column wrap;
+        margin: auto;
+        padding: 0;
+        font-size: 10px;
+        width: 100%;
+    }
+
+    .item__delete .item__button p, .item__edit .item__button p{
+        font-size: 10px;
+        margin: auto;
+    }
+
 }
 
 @media (max-width: 910px){
     .template{
         flex-flow: column;
+    }
+
+    .right__todo__background{
+        margin-top: 10px;
     }
 
     .left-view{
@@ -437,10 +673,24 @@ body{
         font-size: 65px;
         font-weight: bold;
     }
-    
+
+    .pomodoros__check{
+        margin: 30px 10px;
+    }
+
+    .pomodoro__count{
+        height: 17px;
+        width: 17px;
+    }
+
+    .background__button{
+        width: 50px;
+        height: 50px;
+    }
+
     .buttonsArea__box > button > .icon{
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
         margin: auto;
     }
 
@@ -482,6 +732,55 @@ body{
         font-size: 15px;
     }
 
+    .box__todo{
+        height: 25px;
+    }
+
+    .box__todo__title{
+        flex: 1 1 50px;
+        margin: 0 5px;
+    }
+
+    .box__todo__title h2{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .input__bar{
+        margin: 5px 10px;
+    }
+
+    .icon__todo p{
+        font-size: 12px;
+    }
+
+    .darkicon__todo{
+        padding: 5px;
+    }
+
+    .darkicon__todo p{
+        font-size: 12px;
+    }
+
+}
+
+@media (max-width: 500px){
+    .box__todo__title h2{
+        font-size: 15px;
+        margin: 5px 10px;
+    }
+
+    .input__bar{
+        width: 100%;
+        margin: 0 0 0 5px;
+    }
+
+    .icon__todo{
+        margin: 5px;
+        padding: 5px 10px;
+    }
 }
 
 /* Dark mode */
@@ -531,6 +830,91 @@ body{
     color: var(--darkfontColor);
 }
 
+.darkbuttons__content button{
+    background: var(--darkleftColor);
+    box-shadow: var(--darkleftColor) 0 0 20px 1px;
+    transition: 0.15s;
+}
+
+.darkbuttons__content button .icon{
+    color: var(--darkfontColor);
+}
+
+.darkbuttons__content button:hover{
+    background: var(--whiteColor);
+    box-shadow: var(--lightbulbColor) 0 0 20px 1px;
+}
+
+.darkbuttons__content button:hover .icon{
+    color: var(--lightbulbColor);
+}
+
 body.dark{
     background-color: var(--darkbackground);
+}
+
+.right__todo__background{
+    border-bottom: var(--darkredColor) 3px solid;
+    padding: 0 10px;
+}
+
+.darkbox__todo{
+    z-index: 100;
+    background: var(--darkgreyColor);
+    border: 4px solid #16001100;
+    box-shadow: var(--darkredColor) 0px 0px 5px 3px;
+    color: var(--darkfontColor);
+}
+
+.darkicon__todo{
+    background: var(--darkbackground);
+    color: var(--darkfontColor);
+    outline: var(--darkfontColor) 1px solid;
+    box-shadow: var(--darkshadowColor) 0px 0px 5px 1px;
+}
+
+.darkicon__todo:hover{
+    background: var(--darkredColor);
+    color: var(--darkfontColor);
+    outline: var(--darkfontColor) 1px solid;
+    box-shadow: var(--darkshadowColor) 0px 0px 5px 1px;
+}
+
+.darkinput__bar__box{
+    background: var(--darkgreyColor);
+    color: var(--darkfontColor);
+}
+
+.darkinput__bar__box:hover{
+    background: linear-gradient(#00000000 75%, var(--darkpomodoroColor));
+    border-bottom: var(--darkredColor) 1px solid;
+}
+
+.darkinput__bar__box:focus{
+    outline: none;
+    border-bottom: var(--darkredColor) 1px solid;   
+    background: var(--darkbackground);
+    color: var(--darkfontColor);
+}
+
+.darkitem{
+    background: var(--darkgreyColor);
+    border: 4px solid #16001100;
+    filter: drop-shadow(var(--darkshadowColor) 0px 4px 2px);
+}
+
+.darkitem input{
+    color: var(--darkfontColor);
+}
+
+.darkitem__edit{
+    background-color: var(--blueColor);
+    color: var(--darkfontColor);
+    filter: drop-shadow(var(--blueColor) 0px 0px 7px);
+}
+
+.darkitem__delete{
+    background-color: var(--redborderColor);
+    color: var(--darkfontColor);
+    filter: drop-shadow(var(--redborderColor) 0px 0px 7px);
 }
