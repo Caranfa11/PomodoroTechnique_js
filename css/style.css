@@ -73,7 +73,7 @@ body{
     margin: 15px 10px 5px 10px;
 }
 
-.buttons__content button{
+.switchDarkMode{
     position:absolute;
     right: 0;
     border: none;
@@ -86,21 +86,50 @@ body{
     transition: 0.15s;
 }
 
-.buttons__content button .icon{
+.switchDarkMode .icon{
     font-size: 15px;
-    padding: 0 15px;
+    padding: 0 12px;
     margin: 5px 5px;
     color: var(--lightbulbColor);
 }
 
-.buttons__content button:hover{
+.switchDarkMode:hover{
     background: var(--darkleftColor);
     box-shadow: var(--darkbackground) 0 0 20px 1px;
     cursor: pointer;
 }
 
-.buttons__content button:hover .icon{
+.switchDarkMode:hover .icon{
     color: var(--whiteColor);
+}
+
+.switchInfo{
+    position:absolute;
+    border: none;
+    margin: 0 15px 0 0;
+    background: var(--weightpinkColor);
+    padding: 10px 0px;
+    border-radius: 15px;
+    outline: 1px black;
+    box-shadow: var(--lightgreyColor) 0 0 10px 0px;
+    transition: 0.15s;
+}
+
+.switchInfo .icon{
+    padding: 0 15px;
+    font-size: 15px;
+    margin: 5px 5px;
+    color: var(--whiteColor);
+}
+
+.switchInfo:hover{
+    background: var(--pinkColor);
+    box-shadow: var(--darkbackground) 0 0 5px 1px;
+    cursor: pointer;
+}
+
+.switchInfo:hover .icon{
+    color: var(--darkleftColor);
 }
 
 .left__background{
@@ -185,9 +214,6 @@ body{
     background: var(--darkpomodoroColor);
     opacity: 100% !important;
 }
-
-/* .off{
-} */
 
 .active{
     border-radius: 100%;
@@ -443,7 +469,7 @@ body{
 
 .icon__todo{
     flex: 1 1 0%;
-    margin:5px;
+    margin:5px 10px;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -523,6 +549,11 @@ body{
     font-size: 1.1rem;
     text-align:center;
     font-weight:bold;
+}
+
+.item__description input:focus{
+    outline: none;
+    border-bottom: var(--darkredColor) 1px solid;
 }
 
 .item__delete, .item__edit{
@@ -756,6 +787,10 @@ body{
         font-size: 12px;
     }
 
+    .icon__todo{
+        padding: 5px;
+    }
+
     .darkicon__todo{
         padding: 5px;
     }
@@ -867,7 +902,8 @@ body.dark{
 }
 
 .darkicon__todo{
-    background: var(--darkbackground);
+    margin: 5px 10px;
+    background: var(--greyColor);
     color: var(--darkfontColor);
     outline: var(--darkfontColor) 1px solid;
     box-shadow: var(--darkshadowColor) 0px 0px 5px 1px;
@@ -917,4 +953,29 @@ body.dark{
     background-color: var(--redborderColor);
     color: var(--darkfontColor);
     filter: drop-shadow(var(--redborderColor) 0px 0px 7px);
+}
+
+.darkbuttons__content .darkswitchInfo{
+    position:absolute;
+    border: none;
+    margin: 0 15px 0 0;
+    background: var(--darkshadowColor);
+    padding: 10px 0px;
+    border-radius: 15px;
+    outline: 1px black;
+    box-shadow: var(--redborderColor) 0 0 10px 0px;
+    transition: 0.15s;
+}
+
+.darkbuttons__content .darkswitchInfo .icon{
+    padding: 0 15px;
+    font-size: 15px;
+    margin: 5px 5px;
+    color: var(--whiteColor);
+}
+
+.darkbuttons__content .darkswitchInfo:hover{
+    background: var(--darkredColor);
+    box-shadow: var(--darkfontColor) 0 0 10px 1px;
+    cursor: pointer;
 }

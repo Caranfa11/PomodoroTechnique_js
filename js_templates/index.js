@@ -93,12 +93,25 @@ function DisplayTodos(){
 
     if (darkmode == null || darkmode == 'false' || darkmode == undefined) {
         darkmode = !darkmode
-        store(`${darkmode}`);
+        storeDarkMode(`${darkmode}`);
     } else if (darkmode == 'true') {
         changeViewMode(darkmode)
     }
+
+    if (switchRightView == null || switchRightView == 'false' || switchRightView == undefined) {
+        switchRightView = 0
+        storeRightView(`${switchRightView}`);
+    } else {
+        switchRightView = localStorage.getItem("switchRightView")   
+    }
+
 }
 
+function checkLocalStorage(){
+    
+}
+
+var switchRightView = localStorage.getItem("switchRightView")
 var darkmode = localStorage.getItem('darkmode');
 
 document.getElementById("left-view").innerHTML = finalView;
@@ -108,8 +121,12 @@ document.getElementById("right-view").innerHTML = rightView[1];
 
 document.getElementById("darkMode").addEventListener("click", e => {
     darkmode = !darkmode
-    store(`${darkmode}`)
+    storeDarkMode(`${darkmode}`)
     changeViewMode(darkmode)
+})
+
+document.getElementById("switchInfo").addEventListener("click", e => {
+
 })
 
 // function load() {
@@ -121,8 +138,12 @@ document.getElementById("darkMode").addEventListener("click", e => {
 //     }
 // }
 
-function store(value) {
+function storeDarkMode(value) {
     localStorage.setItem('darkmode', value);
+}
+
+function storeRightView(value) {
+    localStorage.setItem('rightView', value);
 }
 
 var timer = document.createElement('script');
