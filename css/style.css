@@ -103,25 +103,6 @@ body{
     color: var(--whiteColor);
 }
 
-.darkbuttons__content button{
-    background: var(--darkleftColor);
-    box-shadow: var(--darkleftColor) 0 0 20px 1px;
-    transition: 0.15s;
-}
-
-.darkbuttons__content button .icon{
-    color: var(--darkfontColor);
-}
-
-.darkbuttons__content button:hover{
-    background: var(--whiteColor);
-    box-shadow: var(--lightbulbColor) 0 0 20px 1px;
-}
-
-.darkbuttons__content button:hover .icon{
-    color: var(--lightbulbColor);
-}
-
 .left__background{
     margin: auto;
     width: 100%;
@@ -535,6 +516,8 @@ body{
 }
 
 .item__description input{
+    width: 100%;
+    height: 100%;
     background: none;
     border: 0;
     font-size: 1.1rem;
@@ -769,11 +752,6 @@ body{
         margin: 5px 10px;
     }
 
-    .icon__todo{
-        margin: 0 5px;
-        padding: 5px 2px;
-    }
-
     .icon__todo p{
         font-size: 12px;
     }
@@ -785,8 +763,6 @@ body{
     .darkicon__todo p{
         font-size: 12px;
     }
-
-    
 
 }
 
@@ -854,6 +830,25 @@ body{
     color: var(--darkfontColor);
 }
 
+.darkbuttons__content button{
+    background: var(--darkleftColor);
+    box-shadow: var(--darkleftColor) 0 0 20px 1px;
+    transition: 0.15s;
+}
+
+.darkbuttons__content button .icon{
+    color: var(--darkfontColor);
+}
+
+.darkbuttons__content button:hover{
+    background: var(--whiteColor);
+    box-shadow: var(--lightbulbColor) 0 0 20px 1px;
+}
+
+.darkbuttons__content button:hover .icon{
+    color: var(--lightbulbColor);
+}
+
 body.dark{
     background-color: var(--darkbackground);
 }
@@ -905,8 +900,10 @@ body.dark{
 .darkitem{
     background: var(--darkgreyColor);
     border: 4px solid #16001100;
-    /* border: 3px solid var(--darkredColor); */
     filter: drop-shadow(var(--darkshadowColor) 0px 4px 2px);
+}
+
+.darkitem input{
     color: var(--darkfontColor);
 }
 
