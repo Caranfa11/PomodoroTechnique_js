@@ -2,6 +2,8 @@ import finalView from "./leftView.js"
 import rightView from "./rightView.js"
 import {changeViewMode} from "../js/darkMode.js"
 
+var todos;
+
 window.addEventListener('load', () => {
     todos = JSON.parse(localStorage.getItem('todos')) || [];
     const newTodoForm = document.querySelector('#new__todo__form');
@@ -18,21 +20,61 @@ window.addEventListener('load', () => {
 
         localStorage.setItem('todos', JSON.stringify(todos));
 
-        e.target.reset();
-
-        DisplayTodos();
+        e.target.reset()
 
     })
+
+    DisplayTodos();
 
 })
 
 function DisplayTodos(){
-    const todoList = document.querySelector("#todolist")
+    const todoList = document.querySelector("#todoList")
 
     todoList.innerHTML = '';
 
     todos.forEach(todo => {
-        // const todoItem = document.createElement
+        const todoItem = document.createElement("div");
+        todoItem.classList.add("item");
+
+        console.log("a")
+
+        const content = document.createElement("div");
+        const button__edit__content = document.createElement("button"); 
+        const button__delete__content = document.createElement("button"); 
+        const label = document.createElement("label");
+        const button__edit = document.createElement("button");
+        const button__delete = document.createElement("button");
+        const done = document.createElement("input");
+        
+        done.type = "checkbox";
+        done.checked = todo.done;
+
+        content.classList.add("item__description")
+        button__edit__content.classList.add("item__edit")
+        button__delete__content.classList.add("item__delete")
+
+        content.innerHTML = `<input type="text" value="${todo.content}" readonly>`
+        button__edit__content.innerHTML = `
+        <div class="item__button" id="bt_edit">
+            <p>edit</p><i class="fas fa-pencil"></i>
+        </div>
+        `
+        button__delete__content.innerHTML = `
+        <div class="item__button" id="bt_delete">
+            <p>delete</p><i class="fas fa-trash-alt"></i>
+        </div>`
+
+
+
+        todoItem.appendChild(content)
+        todoItem.appendChild(button__edit__content)
+        todoItem.appendChild(button__delete__content)
+
+
+        todoList.appendChild(todoItem)
+
+
     })
 }
 

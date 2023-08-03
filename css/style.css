@@ -530,9 +530,16 @@ body{
     text-align:center;
     font-weight:bold;
     font-size: 1.1rem;
-    /* width:100%; */
     margin: auto 10px;
     text-align: left;
+}
+
+.item__description input{
+    background: none;
+    border: 0;
+    font-size: 1.1rem;
+    text-align:center;
+    font-weight:bold;
 }
 
 .item__delete, .item__edit{
@@ -542,11 +549,12 @@ body{
     font-weight:bold;
     margin: 0 7px;
     padding: 10px 5px;
+    border: none;;
     border-radius: 4px;
     background-color: var(--darkfontColor);
 }
 
-.item__delete .item__button, .item__edit .item__button {
+.item__button{
     font-size: 1.1rem;
     display: flex;
     flex-flow: row nowrap;
@@ -554,7 +562,7 @@ body{
     align-content: center;
 }
 
-.item__delete .item__button p, .item__edit .item__button p {
+.item__delete .item__button p, .item__edit .item__button  p {
     margin: 0 5px;
 }
 
@@ -639,16 +647,17 @@ body{
         font-size: 5px;
     }
     
-    .item__edit .item__button, .item__delete .item__button{
+    .item__button{
         flex-flow: column wrap;
-        margin: 0;
+        margin: auto;
         padding: 0;
         font-size: 10px;
+        width: 100%;
     }
 
     .item__delete .item__button p, .item__edit .item__button p{
         font-size: 10px;
-        margin: 5px 0;
+        margin: auto;
     }
 
 }
