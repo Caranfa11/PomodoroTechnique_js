@@ -19,24 +19,28 @@ const changeViewMode = (dark) => {
         element.classList.toggle("darkbackground__button")
     })
     document.querySelector('body').classList.toggle("dark");
-    document.querySelector(".box__todo").classList.toggle("darkbox__todo");
-    document.querySelector(".icon__todo").classList.toggle("darkicon__todo");
-    document.querySelectorAll(".item").forEach(element => {
-        element.classList.toggle("darkitem");
-    });
-    document.querySelectorAll(".item__delete").forEach(element => {
-        element.classList.toggle("darkitem__delete");
-    });
-    document.querySelectorAll(".item__edit").forEach(element => {
-        element.classList.toggle("darkitem__edit");
-    });
-    document.querySelector(".input__bar__box").classList.toggle("darkinput__bar__box")
+    
+    if(document.querySelector(".box__todo")){
+        document.querySelector(".box__todo").classList.toggle("darkbox__todo");
+        document.querySelector(".icon__todo").classList.toggle("darkicon__todo");
+        document.querySelectorAll(".item").forEach(element => {
+            element.classList.toggle("darkitem");
+        });
+        document.querySelectorAll(".item__delete").forEach(element => {
+            element.classList.toggle("darkitem__delete");
+        });
+        document.querySelectorAll(".item__edit").forEach(element => {
+            element.classList.toggle("darkitem__edit");
+        });
+        document.querySelector(".input__bar__box").classList.toggle("darkinput__bar__box")
+    }
 
-
-    // document.querySelector(".box").classList.toggle("darkbox");
-    // document.querySelectorAll(".step").forEach(element =>{
-    //     element.classList.toggle("darkbox")
-    // })
+    if(document.querySelector(".box")){
+        document.querySelector(".box").classList.toggle("darkbox");
+        document.querySelectorAll(".step").forEach(element =>{
+            element.classList.toggle("darkbox")
+        })
+    };
 }
 
 export {changeViewMode}
