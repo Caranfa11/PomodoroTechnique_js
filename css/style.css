@@ -42,11 +42,6 @@ body{
     }
 }
 
-
-.hide{
-    display: none;
-}
-
 .template{
     display: flex;
     background: var(--greyColor);
@@ -982,4 +977,8 @@ body.dark{
     background: var(--darkredColor);
     box-shadow: var(--darkfontColor) 0 0 10px 1px;
     cursor: pointer;
+}
+
+.hide{
+    display: none;
 }
