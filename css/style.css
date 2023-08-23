@@ -819,6 +819,15 @@ body{
         margin: 5px;
         padding: 5px 10px;
     }
+
+    .item__description{
+        height: 100%;
+    }
+
+    .item__description > input{
+        width: 100%;
+        font-size: 10px;
+    }
 }
 
 /* Dark mode */
