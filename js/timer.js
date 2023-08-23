@@ -32,26 +32,6 @@ const resetTimer = () => {
   pauseBtn.classList.toggle("hide");
   clearInterval(timerInterval);
 
-  // document.querySelector(".backgroundCircle").classList.toggle("relax-shadow"); 
-  document.querySelector(".circle__content").classList.toggle("relax");
-  document.querySelector(".left-view").classList.toggle("relax-shadow");
-  document.querySelector(".box").classList.toggle("relax-shadow");
-  document.querySelector(".box__todo").classList.toggle("relax-shadow");
-  document.querySelectorAll(".n__pomodoro").forEach(element=>{
-    element.classList.toggle("relax-pomodoro")
-    element.classList.toggle("relax-opacity")
-  });
-  document.querySelectorAll(".step").forEach(element=>{
-    element.classList.toggle("relax-shadow");
-  });
-  document.querySelectorAll(".darkbackgroundCircle").forEach(element=>{
-    element.classList.toggle("relax-shadow")
-  })
-  document.querySelectorAll(".background__button").forEach(element=>{
-    element.classList.toggle("relax")
-    element.classList.toggle("relax-opacity")
-  })
-  
   if (switchTime){
     timeOnDisplay = minutesTimer[0];
   }else{
@@ -122,6 +102,7 @@ function startTimer(time) {
           switchTime = !switchTime
           digitalClock.volume = 0.05
           digitalClock.play();
+          changeWorkModeDOM();      
           resetTimer() // Change mode value / Relax mode
         }
       }
@@ -134,10 +115,33 @@ function startTimer(time) {
       if (time == 14000 && !switchTime){
         relaxSounds.volume = 0.04
         relaxSounds.play()
+      } else if (time == -1000 && !switchTime){
+        changeWorkModeDOM();
       }
-    
+      
     }
   }, 1000);
+}
+
+function changeWorkModeDOM(){
+  document.querySelector(".circle__content").classList.toggle("relax");
+  document.querySelector(".left-view").classList.toggle("relax-shadow");
+  document.querySelector(".box").classList.toggle("relax-shadow");
+  document.querySelector(".box__todo").classList.toggle("relax-shadow");
+  document.querySelectorAll(".n__pomodoro").forEach(element=>{
+    element.classList.toggle("relax-pomodoro")
+    element.classList.toggle("relax-opacity")
+  });
+  document.querySelectorAll(".step").forEach(element=>{
+    element.classList.toggle("relax-shadow");
+  });
+  document.querySelectorAll(".darkbackgroundCircle").forEach(element=>{
+    element.classList.toggle("relax-shadow")
+  })
+  document.querySelectorAll(".background__button").forEach(element=>{
+    element.classList.toggle("relax")
+    element.classList.toggle("relax-opacity")
+  })
 }
 
 startTimer(minutesTimer[0]);
