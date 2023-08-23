@@ -11,28 +11,28 @@ timer.src = "../js/timer.js"
 document.getElementById("left-view").innerHTML = finalView;
 document.getElementById("right-view").innerHTML = rightView;
 
+if (darkmode == null || darkmode == 'false' || darkmode == undefined) {
+    darkmode = false
+    storeDarkMode(`${darkmode}`);
+} else if (darkmode == 'true') {
+    changeViewMode(darkmode)
+}
+
+switchRightView = localStorage.getItem('rightView')
+
+if (switchRightView == null || switchRightView == undefined || switchRightView == 'false') {
+    switchRightView = 0
+    storeRightView(`${switchRightView}`);
+} else {
+    switchRightView = localStorage.getItem("rightView")   
+}
+
 if(switchRightView == 0){
     document.querySelector(".right__todo__background").classList.toggle("hide");
     document.querySelector(".right__background").classList.toggle("hide");
 }
 
 window.addEventListener('load', () => {
-    
-    if (darkmode == null || darkmode == 'false' || darkmode == undefined) {
-        darkmode = !darkmode
-        storeDarkMode(`${darkmode}`);
-    } else if (darkmode == 'true') {
-        changeViewMode(darkmode)
-    }
-
-    switchRightView = localStorage.getItem('rightView')
-
-    if (switchRightView == null || switchRightView == undefined || switchRightView == 'false') {
-        switchRightView = 0
-        storeRightView(`${switchRightView}`);
-    } else {
-        switchRightView = localStorage.getItem("rightView")   
-    }
 
     todos = JSON.parse(localStorage.getItem('todos')) || [];
     const newTodoForm = document.querySelector('#new__todo__form');
