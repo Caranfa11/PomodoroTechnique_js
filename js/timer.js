@@ -98,7 +98,6 @@ function startTimer(time) {
             })
 
             pomodoroArray[0].classList.add("active")
-            console.log("A")
             activePomodoroIndex = 0;
             clearInterval(timerInterval)
             timerStatus = false
@@ -106,8 +105,7 @@ function startTimer(time) {
             startTimer(minutesTimer[0])
           } //Work mode
         }else{
-          switchTime = !switchTime
-          // document.querySelector(".active").style.opacity = "0";
+          switchTime = !switchTime 
           resetTimer() // Change mode value / Relax mode
         }
       }

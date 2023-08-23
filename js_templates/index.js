@@ -3,8 +3,37 @@ import rightView from "./rightView.js"
 import {changeViewMode} from "../js/darkMode.js"
 
 var todos;
+var switchRightView = localStorage.getItem("rightView")
+var darkmode = localStorage.getItem('darkmode');
+var timer = document.createElement('script');
+timer.src = "../js/timer.js"
+
+document.getElementById("left-view").innerHTML = finalView;
+document.getElementById("right-view").innerHTML = rightView;
+
+if(switchRightView == 0){
+    document.querySelector(".right__todo__background").classList.toggle("hide");
+    document.querySelector(".right__background").classList.toggle("hide");
+}
 
 window.addEventListener('load', () => {
+    
+    if (darkmode == null || darkmode == 'false' || darkmode == undefined) {
+        darkmode = !darkmode
+        storeDarkMode(`${darkmode}`);
+    } else if (darkmode == 'true') {
+        changeViewMode(darkmode)
+    }
+
+    switchRightView = localStorage.getItem('rightView')
+
+    if (switchRightView == null || switchRightView == undefined || switchRightView == 'false') {
+        switchRightView = 0
+        storeRightView(`${switchRightView}`);
+    } else {
+        switchRightView = localStorage.getItem("rightView")   
+    }
+
     todos = JSON.parse(localStorage.getItem('todos')) || [];
     const newTodoForm = document.querySelector('#new__todo__form');
 
@@ -25,15 +54,31 @@ window.addEventListener('load', () => {
         DisplayTodos();
 
     })
-    if (darkmode == null || darkmode == 'false' || darkmode == undefined) {
-        darkmode = !darkmode
-        storeDarkMode(`${darkmode}`);
-    } else if (darkmode == 'true') {
-        changeViewMode(darkmode)
-    }
+
     DisplayTodos();
 
 })
+
+document.getElementById("darkMode").addEventListener("click", e => {
+    darkmode = !darkmode
+    storeDarkMode(`${darkmode}`)
+    changeViewMode(darkmode)
+})
+
+document.getElementById("switchInfo").addEventListener("click", e => {
+    switchRightView == 0 ? switchRightView = 1 : switchRightView = 0;
+    storeRightView(`${switchRightView}`);
+    document.querySelector(".right__todo__background").classList.toggle("hide");
+    document.querySelector(".right__background").classList.toggle("hide");
+})
+
+function storeDarkMode(value) {
+    localStorage.setItem('darkmode', value);
+}
+
+function storeRightView(value) {
+    localStorage.setItem('rightView', value);
+}
 
 function DisplayTodos(){
 
@@ -48,8 +93,6 @@ function DisplayTodos(){
         const content = document.createElement("div");
         const button__edit__content = document.createElement("button"); 
         const button__delete__content = document.createElement("button"); 
-        // const button__edit = document.createElement("button");
-        // const button__delete = document.createElement("button");
         const done = document.createElement("input");
         
         done.type = "checkbox";
@@ -105,52 +148,4 @@ function DisplayTodos(){
     })
 }
 
-if (switchRightView == null || switchRightView == 'false' || switchRightView == undefined) {
-    switchRightView = 0
-    storeRightView(`${switchRightView}`);
-} else {
-    switchRightView = localStorage.getItem("switchRightView")   
-}
-
-var switchRightView = localStorage.getItem("rightView")
-var darkmode = localStorage.getItem('darkmode');
-
-document.getElementById("left-view").innerHTML = finalView;
-document.getElementById("right-view").innerHTML = rightView;
-
-// load();
-
-document.getElementById("darkMode").addEventListener("click", e => {
-    darkmode = !darkmode
-    storeDarkMode(`${darkmode}`)
-    changeViewMode(darkmode)
-})
-
-document.getElementById("switchInfo").addEventListener("click", e => {
-    document.querySelector(".right__todo__background").classList.toggle("hide");
-    document.querySelector(".right__background").classList.toggle("hide");
-})
-
-// function load() {
-//     if (darkmode == null || darkmode == 'false' || darkmode == undefined) {
-//         darkmode = !darkmode
-//         store(`${darkmode}`);
-//     } else if (darkmode == 'true') {
-//         changeViewMode(darkmode)
-//     }
-// }
-
-function storeDarkMode(value) {
-    localStorage.setItem('darkmode', value);
-}
-
-function storeRightView(value) {
-    localStorage.setItem('rightView', value);
-}
-
-var timer = document.createElement('script');
-timer.src = "../js/timer.js"
 document.body.append(timer);
-// var dark = document.createElement('script');
-// dark.src = "../js/darkMode.js"
-// document.body.append(dark);

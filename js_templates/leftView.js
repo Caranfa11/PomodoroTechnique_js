@@ -1,5 +1,3 @@
-
-
 var finalView = `
 <div class="buttons__content">
     <div class="dark__button">
