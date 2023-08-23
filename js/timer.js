@@ -4,19 +4,12 @@ const pauseBtn = document.getElementById("pause");
 const resetBtn = document.getElementById("reset");
 const timerDisplay = document.getElementById("timer");
 const pomodoroArray = [...document.querySelectorAll(".n__pomodoro")];
-const minutesTimer = [1500000, 300000]
+//const minutesTimer = [1500000, 300000]
+const minutesTimer = [20000, 5000]
 
 var timerStatus = false;
 var switchTime = true;
 let timerInterval;
-
-
-// pomodoroArray.forEach(pomodoro => {
-//     pomodoro.addEventListener("click", () => {
-//       pomodoro.classList.toggle("on")
-//       pomodoro.classList.toggle("off")
-//     })
-// });
 
 const outputFormatted = (number) => String(number).padStart(2, "0");
 
@@ -39,6 +32,23 @@ const resetTimer = () => {
   pauseBtn.classList.toggle("hide");
   clearInterval(timerInterval);
 
+  document.querySelector(".circle__content").classList.toggle("relax");
+  document.querySelector(".left-view").classList.toggle("relax-shadow");
+  document.querySelector(".box").classList.toggle("relax-shadow");
+  document.querySelector(".box__todo").classList.toggle("relax-shadow");
+  document.querySelectorAll(".n__pomodoro").forEach(element=>{
+    element.classList.toggle("relax-pomodoro")
+  });
+  document.querySelectorAll(".step").forEach(element=>{
+    element.classList.toggle("relax-shadow");
+  });
+  document.querySelectorAll(".darkbackgroundCircle").forEach(element=>{
+    element.classList.toggle("relax-shadow")
+  })
+  document.querySelectorAll(".background__button").forEach(element=>{
+    element.classList.toggle("relax")
+  })
+  
   if (switchTime){
     timeOnDisplay = minutesTimer[0];
   }else{
@@ -105,7 +115,9 @@ function startTimer(time) {
             startTimer(minutesTimer[0])
           } //Work mode
         }else{
-          switchTime = !switchTime 
+          switchTime = !switchTime
+          let audio = new Audio("../gallery/Relaxing_sound.mp3")
+          audio.play();
           resetTimer() // Change mode value / Relax mode
         }
       }
