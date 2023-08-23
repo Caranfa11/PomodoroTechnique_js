@@ -5,7 +5,7 @@ const resetBtn = document.getElementById("reset");
 const timerDisplay = document.getElementById("timer");
 const pomodoroArray = [...document.querySelectorAll(".n__pomodoro")];
 //const minutesTimer = [1500000, 300000]
-const minutesTimer = [20000, 5000]
+const minutesTimer = [3000, 18000]
 
 var timerStatus = false;
 var switchTime = true;
@@ -72,7 +72,8 @@ const porcent = (current_time, full_time) => {
 };
 
 var activePomodoroIndex = 0;
-
+var digitalClock = new Audio("../gallery/Digital_clock_sounds.mp3")
+var relaxSounds = new Audio("../gallery/Relaxing_sound.mp3")
 function startTimer(time) {
   timerInterval = setInterval(() => {
     if (timerStatus) {
@@ -116,8 +117,8 @@ function startTimer(time) {
           } //Work mode
         }else{
           switchTime = !switchTime
-          let audio = new Audio("../gallery/Relaxing_sound.mp3")
-          audio.play();
+          digitalClock.volume = 0.08
+          digitalClock.play();
           resetTimer() // Change mode value / Relax mode
         }
       }
@@ -127,6 +128,10 @@ function startTimer(time) {
       }
 
       time -= 1000;
+      if (time == 14000 && !switchTime){
+        relaxSounds.volume = 0.09
+        relaxSounds.play()
+      }
     
     }
   }, 1000);
