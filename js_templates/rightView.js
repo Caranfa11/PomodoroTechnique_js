@@ -80,8 +80,7 @@ var rightView = [`
         </div>
     </div>
 </div>
-`,
-`<div class="right__todo__background">
+<div class="right__todo__background hide">
     <div class="box__todo">
         <div class="box__todo__head">
             <div class="box__todo__title">

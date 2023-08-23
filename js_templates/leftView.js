@@ -1,10 +1,11 @@
-
-
 var finalView = `
 <div class="buttons__content">
-    <div class="dark__button" id="darkMode">
-        <button>
+    <div class="dark__button">
+        <button class="switchDarkMode" id="darkMode">
             <i class="icon fa-solid fa-lightbulb"></i>
+        </button>
+        <button class="switchInfo" id="switchInfo">
+            <i class="icon fas fa-info"></i>
         </button>
     </div>
 </div>
