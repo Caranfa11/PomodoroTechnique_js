@@ -4,8 +4,9 @@ const pauseBtn = document.getElementById("pause");
 const resetBtn = document.getElementById("reset");
 const timerDisplay = document.getElementById("timer");
 const pomodoroArray = [...document.querySelectorAll(".n__pomodoro")];
-//const minutesTimer = [1500000, 300000]
-const minutesTimer = [3000, 18000]
+const minutesTimer = [1500000, 300000]
+//Test Timer Values
+//const minutesTimer = [3000, 18000]
 
 var timerStatus = false;
 var switchTime = true;
@@ -118,7 +119,7 @@ function startTimer(time) {
       } else if (time == -1000 && !switchTime){
         changeWorkModeDOM();
       }
-      
+
     }
   }, 1000);
 }
