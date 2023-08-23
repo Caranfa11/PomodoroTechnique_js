@@ -5,18 +5,12 @@ const resetBtn = document.getElementById("reset");
 const timerDisplay = document.getElementById("timer");
 const pomodoroArray = [...document.querySelectorAll(".n__pomodoro")];
 const minutesTimer = [1500000, 300000]
+//Test Timer Values
+//const minutesTimer = [3000, 18000]
 
 var timerStatus = false;
 var switchTime = true;
 let timerInterval;
-
-
-// pomodoroArray.forEach(pomodoro => {
-//     pomodoro.addEventListener("click", () => {
-//       pomodoro.classList.toggle("on")
-//       pomodoro.classList.toggle("off")
-//     })
-// });
 
 const outputFormatted = (number) => String(number).padStart(2, "0");
 
@@ -62,7 +56,8 @@ const porcent = (current_time, full_time) => {
 };
 
 var activePomodoroIndex = 0;
-
+var digitalClock = new Audio("../gallery/Digital_clock_sounds.mp3")
+var relaxSounds = new Audio("../gallery/Relaxing_sound.mp3")
 function startTimer(time) {
   timerInterval = setInterval(() => {
     if (timerStatus) {
@@ -98,7 +93,6 @@ function startTimer(time) {
             })
 
             pomodoroArray[0].classList.add("active")
-            console.log("A")
             activePomodoroIndex = 0;
             clearInterval(timerInterval)
             timerStatus = false
@@ -107,7 +101,9 @@ function startTimer(time) {
           } //Work mode
         }else{
           switchTime = !switchTime
-          // document.querySelector(".active").style.opacity = "0";
+          digitalClock.volume = 0.05
+          digitalClock.play();
+          changeWorkModeDOM();      
           resetTimer() // Change mode value / Relax mode
         }
       }
@@ -117,9 +113,36 @@ function startTimer(time) {
       }
 
       time -= 1000;
-    
+      if (time == 14000 && !switchTime){
+        relaxSounds.volume = 0.04
+        relaxSounds.play()
+      } else if (time == -1000 && !switchTime){
+        changeWorkModeDOM();
+      }
+
     }
   }, 1000);
+}
+
+function changeWorkModeDOM(){
+  document.querySelector(".circle__content").classList.toggle("relax");
+  document.querySelector(".left-view").classList.toggle("relax-shadow");
+  document.querySelector(".box").classList.toggle("relax-shadow");
+  document.querySelector(".box__todo").classList.toggle("relax-shadow");
+  document.querySelectorAll(".n__pomodoro").forEach(element=>{
+    element.classList.toggle("relax-pomodoro")
+    element.classList.toggle("relax-opacity")
+  });
+  document.querySelectorAll(".step").forEach(element=>{
+    element.classList.toggle("relax-shadow");
+  });
+  document.querySelectorAll(".darkbackgroundCircle").forEach(element=>{
+    element.classList.toggle("relax-shadow")
+  })
+  document.querySelectorAll(".background__button").forEach(element=>{
+    element.classList.toggle("relax")
+    element.classList.toggle("relax-opacity")
+  })
 }
 
 startTimer(minutesTimer[0]);
